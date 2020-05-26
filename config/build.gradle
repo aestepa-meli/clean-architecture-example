@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+
+ext.moduleName = 'slalom.example.config'
+
+dependencies {
+	implementation(
+		project(':usecase'),
+		project(':domain'),
+		project(':in-memory-db-simple'),
+		project(':in-memory-db-hazelcast'),
+		project(':in-docker-sql'),
+		project(':in-docker-mongo'),
+		project(':jug'),
+		project(':uuid'),
+		project(':encoder-sha256'),
+		project(':controller'),
+	)
+}

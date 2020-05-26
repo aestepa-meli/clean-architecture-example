@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+
+ext.moduleName = 'slalom.example.db.simple'
+
+dependencies {
+	implementation(
+		project(':domain'),
+		project(':usecase')
+	)
+}

@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+ext.moduleName = 'slalom.example.db.sql'
+
+dependencies {
+	implementation(
+		project(':domain'),
+		project(':usecase'),
+		'com.zaxxer:HikariCP:3.4.2',
+		'mysql:mysql-connector-java:8.0.19',
+
+	)
+
+}

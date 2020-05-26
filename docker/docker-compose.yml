@@ -1,0 +1,27 @@
+version: '3'
+services:
+    mysql:
+        image: mysql:5.6.35
+        ports:
+            - 8899:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: "test"
+            MYSQL_DATABASE: 'clean-arch'
+        volumes:
+            - clean-db:/var/lib/mysql
+
+
+    mongodb:
+        image: mongo:latest
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=andres
+            - MONGO_INITDB_ROOT_PASSWORD=test
+            - MONGO_INITDB_DATABASE=clean-arch
+        ports:
+            - '27017:27017'
+        volumes:
+        - clean-mongo:/data/db
+
+volumes:
+    clean-db:
+    clean-mongo:

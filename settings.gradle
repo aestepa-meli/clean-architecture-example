@@ -1,0 +1,34 @@
+rootProject.name = 'clean-architecture-example'
+
+include ':config'
+include ':domain'
+include ':usecase'
+include ':jug'
+include ':uuid'
+include ':in-memory-db-simple'
+include ':in-memory-db-hazelcast'
+include ':in-docker-sql'
+include ':in-docker-mongo'
+include ':encoder-sha256'
+include ':controller'
+//include ':spring-controller'
+//include ':vertx-controller'
+
+include ':manual-app'
+include ':spring-app'
+include ':vertx-app'
+
+project(":encoder-sha256").projectDir = file("adapter/encoder/sha256")
+project(":jug").projectDir = file("adapter/id-generator/jug")
+project(":uuid").projectDir = file("adapter/id-generator/uuid")
+project(":in-memory-db-simple").projectDir = file("adapter/repository/in-memory-simple")
+project(":in-memory-db-hazelcast").projectDir = file("adapter/repository/in-memory-hazelcast")
+project(":in-docker-sql").projectDir = file("adapter/repository/in-docker-sql")
+project(":in-docker-mongo").projectDir = file("adapter/repository/in-docker-mongo")
+project(":controller").projectDir = file("adapter/controller")
+//project(":spring-controller").projectDir = file("adapter/controller/spring-controller")
+//project(":vertx-controller").projectDir = file("adapter/controller/vertx-controller")
+
+project(":manual-app").projectDir = file("application/manual-app")
+project(":spring-app").projectDir = file("application/spring-app")
+project(":vertx-app").projectDir = file("application/vertx-app")

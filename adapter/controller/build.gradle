@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+
+ext.moduleName = 'slalom.example.controller'
+
+dependencies {
+	implementation(
+		project(':usecase'),
+		project(':domain'),
+	)
+}
